@@ -1,0 +1,8 @@
+SELECT 
+FORMAT(b.StartDate, 'yyyy-MM') AS Month,
+SUM(DATEDIFF(DAY, b.StartDate, b.EndDate) * c.DailyRate) AS Revenue 
+FROM
+BOOKING b
+JOIN CONDO c ON b.BldgNum = c.BldgNum AND b.UnitNum = c.UnitNum
+GROUP BY FORMAT(b.StartDate, 'yyyy-MM')
+ORDER BY Month
