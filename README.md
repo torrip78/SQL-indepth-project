@@ -12,10 +12,10 @@ A SQL-based data analysis project built on the EERD of a fictional reservation c
 - Microsoft SQL Server Management Studio
 
 ## Key Features 
-- Guest and booking analytics
-- Differences in employee roles (Housekeeper vs Guide)
-- Condo usage and cleaning frequency
-- Family relationships and travel patterns
+- Number of bookings by month
+- The average length of bookings
+- Revenue by month
+- Top spending guest
 
 ## File structure 
 - 'schema.sql' - database schema
