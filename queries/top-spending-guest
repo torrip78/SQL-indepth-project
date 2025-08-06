@@ -1,0 +1,8 @@
+SELECT TOP 1
+  g.FName + ' ' + g.LName AS GuestName,
+  SUM(DATEDIFF(DAY, b.StartDate, b.EndDate) * c.DailyRate) AS TotalSpent
+FROM Guest g
+JOIN Booking b ON g.GuestID = b.GuestID
+JOIN Condo c ON b.BldgNum = c.BldgNum AND b.UnitNum = c.UnitNum
+GROUP BY g.FName, g.LName
+ORDER BY SUM(DATEDIFF(DAY, b.StartDate, b.EndDate) * c.DailyRate) DESC;
